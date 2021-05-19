@@ -3,6 +3,8 @@
 # requires python3 + google go language + pip3
 
 # requires version go 1.16.3
+# or similar , pip 21.0.1 from /usr/lib/python3.9/site-packages/pip (python 3.9)
+
 ---------------------------------
 
 
