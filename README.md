@@ -56,6 +56,40 @@ python genesis.py -t 1486949366 -a scrypt -z "PHRASE" -p PUBKEY 2>&1 | tee test-
 python genesis.py -t 1296688602 -b 0x207fffff -n 0 -a scrypt -z "PHRASE" -p PUBKEY 2>&1 | tee regtest-network-key.txt
  ```
 
+original code
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Introduction
 ------------
