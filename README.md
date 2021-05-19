@@ -12,7 +12,6 @@ go mod tidy
 go build
 ```
 
- ./generate-genesis 
 
 
 ```
