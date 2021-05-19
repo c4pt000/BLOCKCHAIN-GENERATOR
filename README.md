@@ -1,4 +1,16 @@
-# BLOCKCHAIN-GENERATOR
+# BLOCKCHAIN-GENERATOR (requires docker)
+
+```
+sudo dnf -y install dnf-plugins-core
+ sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+    
+    
+     sudo dnf install docker-ce docker-ce-cli containerd.io
+
+ ```
+
 * based off of genesis-generator and blockchain tools  (supports threads for faster genesis block generation)
 # requires python3 + google go language + pip3
 
