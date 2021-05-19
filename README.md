@@ -41,6 +41,22 @@ example
 ./generate-genesis -algo scrypt -bits 1e0ffff0 -coins 10000000000000000 -psz "phrase" -timestamp 1620011758 -pubkey 043a4c278690492f38bdd1fb7014ad03119d39a2b99dcd976649083b1eb56f595752bf450b899ed443ae429c60b15f5952a8c6847fbb3ef3ea2a4eeb8ab64c6b5c -threads 24
 ```
 
+
+
+then 3 network assert
+
+```
+PUBLIC_KEY from sha256 phrase + pubkey 
+epoch time:					 date +%s
+change scrypt if function isnt scrypt "sha256" other etc,
+--------------------------------------------
+
+python genesis.py -a scrypt -z "PHRASE" -p PUBKEY 2>&1 | tee main-network-key.txt
+python genesis.py -t 1486949366 -a scrypt -z "PHRASE" -p PUBKEY 2>&1 | tee test-network-key.txt
+python genesis.py -t 1296688602 -b 0x207fffff -n 0 -a scrypt -z "PHRASE" -p PUBKEY 2>&1 | tee regtest-network-key.txt
+ ```
+
+
 Introduction
 ------------
 
