@@ -44,8 +44,7 @@ Genesis block generator
 ```
 example
 
-./generate-genesis -algo scrypt -bits 1e0ffff0 -coins 10000000000000000 -psz "your phrase" -timestamp 1620011758 -pubkey 048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56
- -threads 24
+./generate-genesis -algo scrypt -bits 1e0ffff0 -coins 10000000000000000 -psz "your phrase" -timestamp 1620011758 -pubkey 048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56 -threads 24
 ```
 
 
