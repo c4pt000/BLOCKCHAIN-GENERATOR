@@ -18,15 +18,15 @@ go build
 
 
 
-
+sha256 "phrase here"
+pubkey -u <pubkey>
 
 
 Genesis block generator
 =======================
 
 ```
-https://github.com/c4pt000/generate-genesis
-
+example
 
 ./generate-genesis -algo scrypt -bits 1e0ffff0 -coins 10000000000000000 -psz "phrase" -timestamp 1620011758 -pubkey 043a4c278690492f38bdd1fb7014ad03119d39a2b99dcd976649083b1eb56f595752bf450b899ed443ae429c60b15f5952a8c6847fbb3ef3ea2a4eeb8ab64c6b5c -threads 24
 ```
