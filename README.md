@@ -19,15 +19,15 @@ sudo dnf -y install dnf-plugins-core
 
 ---------------------------------
 
-
+for generate-genesis functionality
 ```
 go mod init generate-genesis
 go mod tidy
 go build
-```
-```
+
 pip install ecdsa
 export COIN=bitcoin
+
 ```
 
 ```
@@ -47,19 +47,32 @@ sha256 hash generator
 PUBLIC_KEY generator
 ```
 ./pubkey.py -u 2358feea3003a1d16af3454be4cec2f6a7db43bfc7daa101b8949fff91ed64b4 
- 
+
+
+PUBLIC_KEY
+
 048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56
+
 ```
 
 ```
 example
 
+time epoch
+date +%s
+
+
 ./generate-genesis -algo scrypt -bits 1e0ffff0 -coins 10000000000 -psz "your phrase" -timestamp 1620011758 -pubkey 048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56 -threads 24
+
 ```
-edit src/amount.h for supply of network
+
+* edit src/amount.h for supply of network
+
 
 to generate 3 assets for chainparms.cpp
 ```
+edit 3net-assert-gen.sh for your PUBLIC_KEY 
+
 wget https://raw.githubusercontent.com/c4pt000/BLOCKCHAIN-GENERATOR/main/3net-assert-gen.sh
 chmod +x 3net-assert-gen.sh
 sh 3net-assert-gen.sh
@@ -69,11 +82,7 @@ sh 3net-assert-gen.sh
 Genesis block generator
 =======================
 
-time in unix datetime "epoch" 
 
-```
-date +%s
-```
 with thread support (24 threads)
 ![s1](https://raw.githubusercontent.com/c4pt000/BLOCKCHAIN-GENERATOR/main/24-threads-processor-jobs.png)
 ```
