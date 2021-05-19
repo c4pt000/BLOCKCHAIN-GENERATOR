@@ -1,6 +1,6 @@
 # BLOCKCHAIN-GENERATOR
 * based off of genesis-generator and blockchain tools  (supports threads for faster genesis block generation)
-# requires python3 + google go language
+# requires python3 + google go language + pip3
 
 # requires version go 1.16.3
 ---------------------------------
