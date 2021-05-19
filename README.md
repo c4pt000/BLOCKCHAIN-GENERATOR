@@ -15,22 +15,26 @@ go build
  ./generate-genesis 
 
 
-
-```
- sha256 "Welcome to blockchain fundamentals" 2358feea3003a1d16af3454be4cec2f6a7db43bfc7daa101b8949fff91ed64b4 
- 
- 
- $ pubkey -u 2358feea3003a1d16af3454be4cec2f6a7db43bfc7daa101b8949fff91ed64b4 
- 
- 048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56
- 
- ```
-
 ```
 ./sha256.py "phrase here"
 
 ./pubkey.py -u <pubkey>
 ```
+
+sha256 hash generator
+
+```
+sha256 "your phrase" 2358feea3003a1d16af3454be4cec2f6a7db43bfc7daa101b8949fff91ed64b4 
+``` 
+
+PUBLIC_KEY generator
+```
+$pubkey -u 2358feea3003a1d16af3454be4cec2f6a7db43bfc7daa101b8949fff91ed64b4 
+ 
+048f74dca316b3faa7e947919babe20e274d5c1f4cf3366652bd360bb51322f652b575fd0461fb982fd9aabf39c879db9f08a5f505bb5671083bc085c1802eac56
+```
+
+
 
 Genesis block generator
 =======================
