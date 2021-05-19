@@ -1,5 +1,9 @@
 # BLOCKCHAIN-GENERATOR (requires docker)
 
+https://github.com/c4pt000/AltcoinGenerator
+
+requires replacing src/qt/res/icons properly
+
 ```
 sudo dnf -y install dnf-plugins-core
  sudo dnf config-manager \
