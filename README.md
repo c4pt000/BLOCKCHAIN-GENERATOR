@@ -41,7 +41,12 @@ PUBLIC_KEY generator
 Genesis block generator
 =======================
 
-timestamp "date +%s"
+time in unix datetime "epoch" 
+
+```
+date +%s
+```
+
 ```
 example
 
