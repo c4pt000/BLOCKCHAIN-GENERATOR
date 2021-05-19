@@ -29,8 +29,6 @@ GENESIS_REWARD_PUBKEY=000000000000000-SAME-PUBLICKEY
 GENESISHZERO_REPOS=https://github.com/c4pt000/GenesisH0
 
 # LEAVE EMPTY DISREGARD
-LITECOIN_MERKLE_HASH=
-LITECOIN_MAIN_GENESIS_HASH=
 LITECOIN_TEST_GENESIS_HASH=
 LITECOIN_REGTEST_GENESIS_HASH=
 
@@ -118,15 +116,7 @@ generate_genesis_block()
         pushd GenesisH0
         git pull
     fi
-
-    if [ ! -f ${COIN_NAME}-main.txt ]; then
-        echo "Mining genesis block... this procedure can take many hours of cpu work.."
-        docker_run_genesis "python /GenesisH0/genesis.py -a scrypt -z \"$PHRASE\" -p $GENESIS_REWARD_PUBKEY 2>&1 | tee /GenesisH0/${COIN_NAME}-main.txt"
-    else
-        echo "Genesis block already mined.."
-        cat ${COIN_NAME}-main.txt
-    fi
-
+    
     if [ ! -f ${COIN_NAME}-test.txt ]; then
         echo "Mining genesis block of test network... this procedure can take many hours of cpu work.."
         docker_run_genesis "python /GenesisH0/genesis.py  -t 1486949366 -a scrypt -z \"$PHRASE\" -p $GENESIS_REWARD_PUBKEY 2>&1 | tee /GenesisH0/${COIN_NAME}-test.txt"
@@ -143,16 +133,11 @@ generate_genesis_block()
         cat ${COIN_NAME}-regtest.txt
     fi
 
-    MAIN_PUB_KEY=$(cat ${COIN_NAME}-main.txt | grep "^pubkey:" | $SED 's/^pubkey: //')
-    MERKLE_HASH=$(cat ${COIN_NAME}-main.txt | grep "^merkle hash:" | $SED 's/^merkle hash: //')
-    TIMESTAMP=$(cat ${COIN_NAME}-main.txt | grep "^time:" | $SED 's/^time: //')
-    BITS=$(cat ${COIN_NAME}-main.txt | grep "^bits:" | $SED 's/^bits: //')
+   
 
-    MAIN_NONCE=$(cat ${COIN_NAME}-main.txt | grep "^nonce:" | $SED 's/^nonce: //')
     TEST_NONCE=$(cat ${COIN_NAME}-test.txt | grep "^nonce:" | $SED 's/^nonce: //')
     REGTEST_NONCE=$(cat ${COIN_NAME}-regtest.txt | grep "^nonce:" | $SED 's/^nonce: //')
 
-    MAIN_GENESIS_HASH=$(cat ${COIN_NAME}-main.txt | grep "^genesis hash:" | $SED 's/^genesis hash: //')
     TEST_GENESIS_HASH=$(cat ${COIN_NAME}-test.txt | grep "^genesis hash:" | $SED 's/^genesis hash: //')
     REGTEST_GENESIS_HASH=$(cat ${COIN_NAME}-regtest.txt | grep "^genesis hash:" | $SED 's/^genesis hash: //')
 
