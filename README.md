@@ -11,10 +11,10 @@ go mod init generate-genesis
 go mod tidy
 go build
 ```
-
+```
 pip install ecdsa
 export COIN=bitcoin
-
+```
 
 ```
 ./sha256.py "phrase here"
