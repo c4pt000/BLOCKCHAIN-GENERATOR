@@ -2,13 +2,15 @@
 based off of genesis-generator and blockchain tools
 
 
-requires version go1.16.3
+# requires version go 1.16.3
 ---------------------------------
 
+
+```
 go mod init generate-genesis
 go mod tidy
 go build
-
+```
 
  ./generate-genesis 
 
