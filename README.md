@@ -73,7 +73,7 @@ date +%s
 * edit src/amount.h for supply of network
 
 
-to generate 3 assets for chainparms.cpp
+to generate 3 assets for src/chainparams.cpp
 ```
 edit 3net-assert-gen.sh for your PUBLIC_KEY 
 
