@@ -27,9 +27,9 @@ go build
  ```
 
 ```
-sha256 "phrase here"
+./sha256.py "phrase here"
 
-pubkey -u <pubkey>
+./pubkey.py -u <pubkey>
 ```
 
 Genesis block generator
