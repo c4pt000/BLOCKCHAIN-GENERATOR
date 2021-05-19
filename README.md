@@ -12,6 +12,8 @@ go mod tidy
 go build
 ```
 
+pip install ecdsa
+export COIN=bitcoin
 
 
 ```
