@@ -41,6 +41,7 @@ PUBLIC_KEY generator
 Genesis block generator
 =======================
 
+timestamp "date +%s"
 ```
 example
 
