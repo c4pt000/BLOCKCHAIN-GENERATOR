@@ -1,4 +1,8 @@
+
+# https://github.com/c4pt000/AlternativeCryptoCurrencyBuilder-scrypt
+
 # BLOCKCHAIN-GENERATOR (requires docker)
+
 
 https://medium.com/@jordan.baczuk/how-to-fork-bitcoin-part-2-59b9eddb49a4
 
