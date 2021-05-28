@@ -1,4 +1,4 @@
-
+https://www.youtube.com/watch?v=U-IIKVaEhrA
 # https://github.com/c4pt000/AlternativeCryptoCurrencyBuilder-scrypt
 
 # BLOCKCHAIN-GENERATOR (requires docker)
