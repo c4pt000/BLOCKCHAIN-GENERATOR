@@ -68,6 +68,8 @@ minimizetotray=0
 SAMPLE LOCAL CLIENT CONF FOR NEW WALLET-QT
 
 ```
+deprecatedrpc=generate
+
 #prune=2200   
 
 rpcuser=root
