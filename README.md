@@ -1,5 +1,113 @@
 https://www.youtube.com/watch?v=U-IIKVaEhrA
+
 # https://github.com/c4pt000/AlternativeCryptoCurrencyBuilder-scrypt
+
+
+
+JUST DOWNLOAD YOUR COIN
+EDIT YOUR COIN ARTWORK AND RENAME YOUR COIN
+THEN CHANGE PCHMESSAGE IN CHAINPARAMS.CPP
+
+artwork usually lives in /src/qt/res/icons
+
+and grep for coin name and or sed replace
+
+DOES NOT REQUIRE NEW GENESIS OR MERKLE HASH AT ALL FOR MAIN, TEST, OR REGRESSION NETWORKS
+
+THEN LINK NODES TO DEPLOY YOUR NEW COIN
+
+CHANGE TO YOUR UNIQUE VALUES AND COMMENT OUT THE DNS SEEDS
+```
+  pchMessageStart[0] = 0xee;
+        pchMessageStart[1] = 0xff;
+        pchMessageStart[2] = 0xgg;
+        pchMessageStart[3] = 0xhh;
+        
+        
+        some line in chainparams.cpp
+        
+             // Note that of those with the service bits flag, most only support a subset of possible options
+//vSeeds.push_back(CDNSSeedData("radioblockchain.info", "seed-ns1.radioblockchain.info", true));
+//vSeeds.push_back(CDNSSeedData("radioblockchain.info", "seed-ns2.radioblockchain.info" ));
+//vSeeds.push_back(CDNSSeedData("radioblockchain.info", "seed-ns3.radioblockchain.info" ));
+
+        
+```
+
+SAMPLE REMOTE VPS NODE FOR NEW NETWORK
+```
+upnp=1
+listen=1
+mempoolexpiry=72
+maxmempool=300
+maxorphantx=100
+disablewallet=1
+#prune=2200
+## Spam protection
+limitfreerelay=10
+minrelaytxfee=0.0001
+
+maxconnections=40
+
+server=1
+daemon=1
+
+rpctimeout=30
+rpcport=8332
+rpcconnect=127.0.0.1
+
+#rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
+#rpcsslcertificatechainfile=server.cert
+#rpcsslprivatekeyfile=server.pem
+
+# Do not use Internet Relay Chat to find peers.
+noirc=0
+minimizetotray=0
+
+```
+SAMPLE LOCAL CLIENT CONF FOR NEW WALLET-QT
+
+```
+#prune=2200   
+
+rpcuser=root
+rpcpassword=rpcpassword
+
+rpcport=8332
+rpcallowport=8333
+
+
+rpcconnect=0.0.0.0
+rpcbind=0.0.0.0
+rpcallowip=127.0.0.1
+
+
+            
+dbcache=2048
+maxorphantx=10
+maxmempool=50
+mempoolexpiry=24
+maxconnections=10
+maxuploadtarget=5000
+
+whitelist=0.0.0.0/24
+
+
+
+# change to your new remote VPS node(s)
+addnode=104.237.145.126:9333
+
+
+
+gen=1
+
+daemon=1
+server=1
+
+```
+
+
+
 
 # BLOCKCHAIN-GENERATOR (requires docker)
 
