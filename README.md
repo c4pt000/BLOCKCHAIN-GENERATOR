@@ -75,7 +75,7 @@ consensus.hashGenesisBlock = uint256S("0xfffffffffffffffffffffffffffffffffffffff
 
 
         }
-*/ <--- remove this to activate       save and exit then recompile and run the binary ./src/binnetd then take that output and it goes into "Mainnet area"
+*/ <--- remove this to activate       save and exit then recompile and run the binary ./src/bitnetd then take that output and it goes into "Mainnet area"
 
 THE CHAINPARAMS.CPP SCRIPT WILL GENERATE A NEW OUTPUT FOR YOUR MAINNET HASH WHEN YOU COMPILE WITH MAKE -J24 AND RUN THE BINARY WITH ./SRC/BITNETD WITH A DIFFERENT HASH AND NONCE THEN YOU REPLACE THE VALUES
 
