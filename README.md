@@ -1,4 +1,4 @@
-
+chainparams.cpp will make the genesis hash without using generate-genesis just using psztimestamp and pubkey with the chainparams.cpp script
 ```
  mkdir new-genesis/
  cd new-genesis/
