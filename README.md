@@ -12,9 +12,13 @@
  go build
  python3 -m pip install ecdsa
  export COIN=bitcoin
-sha256.py -> your-phrase
+
+#sha256.py -> your-phrase
+
 ./sha256.py "Segwit added to Bitnet restart 02-26-2023"
-output from sha256 goes into pubkey.py -u "pubkey-from-sha256.py-output"
+
+#output from sha256 goes into pubkey.py -u "pubkey-from-sha256.py-output"
+
 ./pubkey.py -u a7873ef880c63f09aa66625ace12b414c645e33fcc807f9d9c0c9bb5c93ee55c
 
 
