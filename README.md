@@ -16,8 +16,77 @@ sha256.py -> your-phrase
 ./sha256.py "Segwit added to Bitnet restart 02-26-2023"
 output from sha256 goes into pubkey.py -u "pubkey-from-sha256.py-output"
 ./pubkey.py -u a7873ef880c63f09aa66625ace12b414c645e33fcc807f9d9c0c9bb5c93ee55c
-./generate-genesis -algo sha256 -bits 1e0ffff0 -coins 2000000000 -psz "Segwit added to Bitnet restart 02-26-2023" -timestamp 1677414786 -pubkey 04594c39e7eacaa78d2bb0073725c1b75187a1a5b12a8e78d5222c9efacd7e37bb1455a582c2f6b2ac6b60d2899376780367f2a9aad91d42f23cd9f60663575bad -threads 24 -nonce 1196422
+
+
+
+./generate-genesis -algo sha256 -bits 1e0ffff0 -coins 2000000000 -psz "Segwit added to Bitnet restart 02-26-2023" -timestamp 1677414786 -pubkey 04594c39e7eacaa78d2bb0073725c1b75187a1a5b12a8e78d5222c9efacd7e37bb1455a582c2f6b2ac6b60d2899376780367f2a9aad91d42f23cd9f60663575bad -threads 24 -nonce 1216422
+
+OUTPUT 
+
+Ctrl Hash:	0x00000c9b4a80df644f4f002a90f8cdc2475f2f7fa47458c8509eea60e6164507
+Target:		0x00000ffff0000000000000000000000000000000000000000000000000000000
+Blk Hash:	0x0c86346a9a5057674dfffca7e2cecedf8d0affbcc3ccdd1a44a8362d08d32da6
+Mkl Hash:	0xd40eadc13aa2587961e0050b046ea82918dce2838322e8c3576abe87b4dffc6e
+Nonce:		1914868
+Timestamp:	1677414786
+Pubkey:		04594c39e7eacaa78d2bb0073725c1b75187a1a5b12a8e78d5222c9efacd7e37bb1455a582c2f6b2ac6b60d2899376780367f2a9aad91d42f23cd9f60663575bad
+Coins:		2000000000
+Psz:		'Segwit added to Bitnet restart 02-26-2023'
+
 ```
+
+THEN THIS GOES INTO YOUR GENESIS SCRIPT INSIDE OF CHAINPARAMS.CPP and you recompile 3 times you stop each time and add the new output into the values inside of chainparams.cpp
+
+```
+
+    genesis = CreateGenesisBlock(1677414786, 1914868, 0x1e0ffff0, 1, 50 * COIN);
+
+
+/* <--remove comment to activate script only for mainnet part of chainparams.cpp
+consensus.hashGenesisBlock = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
+            std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
+            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+            uint256 hash;
+            genesis.nNonce = 0;
+            while (UintToArith256(genesis.GetHash()) > hashTarget) {
+                ++genesis.nNonce;
+                if (genesis.nNonce == 0) {
+                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
+                    ++genesis.nTime;
+                }
+                if (genesis.nNonce % 1000 == 0) {
+                    std::cout << strNetworkID << " nonce: " << genesis.nNonce <<  "  time_tx_block " << genesis.nTime << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
+                }
+            }
+
+            printf(" Mainnet ---\n");
+            std::cout << std::string(" main_nonce: ") << ("%" PRIu32, genesis.nNonce) << std::endl;
+            std::cout << std::string(" main_time_block: ") << ("%" PRIu32, genesis.nTime) << std::endl;
+            std::cout << std::string(" main_hash: ") << ("%" PRIu32, genesis.GetHash().ToString().c_str()) << std::endl;
+            std::cout << std::string(" main_merklehash: ") << ("%" PRIu32, genesis.hashMerkleRoot.ToString().c_str()) << std::endl;
+            printf("min Main nBit:  %08x\n", consensus.powLimit);
+            std::cout << std::string("Finished calculating Mainnet Genesis Block for SED replacement of current assertion and values:") << std::endl;
+
+
+
+        }
+*/ <--- remove this to activate       save and exit then recompile and run the binary ./src/binnetd then take that output and it goes into "Mainnet area"
+
+THE CHAINPARAMS.CPP SCRIPT WILL GENERATE A NEW OUTPUT FOR YOUR MAINNET HASH WITH A DIFFERENT HASH AND NONCE THEN YOU REPLACE THE VALUES
+
+    genesis = CreateGenesisBlock(1677414786, 1914868, 0x1e0ffff0, 1, 50 * COIN);
+
+//        consensus.hashGenesisBlock = genesis.GetHash();
+//        assert(consensus.hashGenesisBlock == uint256S("0xYOUR_GENESIS_HASH_VALUE_HERE_FROM_THE_BINARY_DROPPING_IT_INTO_THE_CONSOLE"));
+//        assert(genesis.hashMerkleRoot == uint256S("0xYOUR_MERKLE_HASH_VALUE_HERE_FROM_THE_BINARY_DROPPING_IT_INTO_THE_CONSOLE"));
+
+
+
+THEN PUT THE COMMENTS BACK INTO THE MAINNET AREA AND MOVE TO THE TESTNET AREA AND DO THE SAME THING (IF YOU WANT TO ACTIVATE TESTNET, REGTEST WITH GENESISHASH AND MERKLE HASH FOR THE BLOCKCHAIN)
+
+
+
 
 
 https://www.youtube.com/watch?v=U-IIKVaEhrA
