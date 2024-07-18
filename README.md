@@ -1,3 +1,25 @@
+
+```
+ mkdir new-genesis/
+ cd new-genesis/
+ wget https://github.com/c4pt000/a-genesis-docker-BLOCKCHAIN-GENERATOR-bitnet-maker/blob/main/sha256.py
+ wget https://github.com/c4pt000/a-genesis-docker-BLOCKCHAIN-GENERATOR-bitnet-maker/blob/main/pubkey.py
+ git clone https://github.com/c4pt000/a-genesis-docker-BLOCKCHAIN-GENERATOR-bitnet-maker
+ cd a-genesis-docker-BLOCKCHAIN-GENERATOR-bitnet-maker/
+ sudo yum install go git -y
+ go mod init generate-genesis
+ go mod tidy
+ go build
+ python3 -m pip install ecdsa
+ export COIN=bitcoin
+sha256.py -> your-phrase
+./sha256.py "Segwit added to Bitnet restart 02-26-2023"
+output from sha256 goes into pubkey.py -u "pubkey-from-sha256.py-output"
+./pubkey.py -u a7873ef880c63f09aa66625ace12b414c645e33fcc807f9d9c0c9bb5c93ee55c
+./generate-genesis -algo sha256 -bits 1e0ffff0 -coins 2000000000 -psz "Segwit added to Bitnet restart 02-26-2023" -timestamp 1677414786 -pubkey 04594c39e7eacaa78d2bb0073725c1b75187a1a5b12a8e78d5222c9efacd7e37bb1455a582c2f6b2ac6b60d2899376780367f2a9aad91d42f23cd9f60663575bad -threads 24 -nonce 1196422
+```
+
+
 https://www.youtube.com/watch?v=U-IIKVaEhrA
 
 # https://github.com/c4pt000/AlternativeCryptoCurrencyBuilder-scrypt
